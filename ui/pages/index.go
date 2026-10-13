@@ -81,11 +81,11 @@ var lightIcons = map[iconState]fyne.Resource{
 	{false, true, false}:  icons.ResIconReviewable,
 	{true, false, false}:  icons.ResIconMergeable,
 	{true, true, false}:   icons.ResIconBoth,
-	// TODO: Icons with error
-	{false, false, true}: icons.ResIconWarning,
-	{false, true, true}:  icons.ResIconWarning,
-	{true, false, true}:  icons.ResIconWarning,
-	{true, true, true}:   icons.ResIconWarning,
+	// polling failed: same badges, amber logo
+	{false, false, true}: icons.ResIconDefaultErr,
+	{false, true, true}:  icons.ResIconReviewableErr,
+	{true, false, true}:  icons.ResIconMergeableErr,
+	{true, true, true}:   icons.ResIconBothErr,
 }
 
 var darkIcons = map[iconState]fyne.Resource{
@@ -93,11 +93,11 @@ var darkIcons = map[iconState]fyne.Resource{
 	{false, true, false}:  icons.ResIconReviewableDark,
 	{true, false, false}:  icons.ResIconMergeableDark,
 	{true, true, false}:   icons.ResIconBothDark,
-	// TODO: Icons with error
-	{false, false, true}: icons.ResIconWarning,
-	{false, true, true}:  icons.ResIconWarning,
-	{true, false, true}:  icons.ResIconWarning,
-	{true, true, true}:   icons.ResIconWarning,
+	// polling failed: same badges, amber logo
+	{false, false, true}: icons.ResIconDefaultErrDark,
+	{false, true, true}:  icons.ResIconReviewableErrDark,
+	{true, false, true}:  icons.ResIconMergeableErrDark,
+	{true, true, true}:   icons.ResIconBothErrDark,
 }
 
 func iconFor(state iconState, darkmode bool) (fyne.Resource, error) {

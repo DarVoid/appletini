@@ -24,7 +24,14 @@ func TestIconsAreEmbeddedPNGs(t *testing.T) {
 		{name: "reviewable dark", resource: icons.ResIconReviewableDark},
 		{name: "mergeable dark", resource: icons.ResIconMergeableDark},
 		{name: "both dark", resource: icons.ResIconBothDark},
-		{name: "warning", resource: icons.ResIconWarning},
+		{name: "default error", resource: icons.ResIconDefaultErr},
+		{name: "reviewable error", resource: icons.ResIconReviewableErr},
+		{name: "mergeable error", resource: icons.ResIconMergeableErr},
+		{name: "both error", resource: icons.ResIconBothErr},
+		{name: "default error dark", resource: icons.ResIconDefaultErrDark},
+		{name: "reviewable error dark", resource: icons.ResIconReviewableErrDark},
+		{name: "mergeable error dark", resource: icons.ResIconMergeableErrDark},
+		{name: "both error dark", resource: icons.ResIconBothErrDark},
 	}
 
 	for _, tc := range testCases {

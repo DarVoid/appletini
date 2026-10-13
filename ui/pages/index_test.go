@@ -72,8 +72,11 @@ func TestIconFor(t *testing.T) {
 		{name: "light both", state: iconState{green: true, red: true}, expected: icons.ResIconBoth},
 		{name: "dark default", state: iconState{}, dark: true, expected: icons.ResIconDefaultDark},
 		{name: "dark both", state: iconState{green: true, red: true}, dark: true, expected: icons.ResIconBothDark},
-		{name: "error wins (light)", state: iconState{green: true, err: true}, expected: icons.ResIconWarning},
-		{name: "error wins (dark)", state: iconState{red: true, err: true}, dark: true, expected: icons.ResIconWarning},
+		{name: "error keeps badges (light idle)", state: iconState{err: true}, expected: icons.ResIconDefaultErr},
+		{name: "error keeps badges (light ready)", state: iconState{green: true, err: true}, expected: icons.ResIconMergeableErr},
+		{name: "error keeps badges (light both)", state: iconState{green: true, red: true, err: true}, expected: icons.ResIconBothErr},
+		{name: "error keeps badges (dark attention)", state: iconState{red: true, err: true}, dark: true, expected: icons.ResIconReviewableErrDark},
+		{name: "error keeps badges (dark both)", state: iconState{green: true, red: true, err: true}, dark: true, expected: icons.ResIconBothErrDark},
 	}
 
 	for _, tc := range testCases {
