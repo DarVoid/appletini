@@ -40,6 +40,15 @@ repository's commit statuses and checks.
 On your own PRs, failing CI shows the red badge, and a PR only shows as ready to merge
 (green badge) when it's approved, has no conflicts, and its checks pass (or it has none).
 
+Each PR in a tracker has an **Approve** option in its menu, which approves it with the
+comment "LGTM!". It isn't shown on your own PRs (GitHub doesn't allow approving those),
+on PRs you've already approved yourself (other people's approvals don't hide it), or
+on red PRs: merge conflicts, failing CI, or changes requested by someone else. Changes
+you requested yourself don't hide it, so you can approve once they're addressed.
+Approving needs a token that can write pull request reviews; a classic token with
+`repo` scope can. The result (approved, or why not) shows as a desktop notification,
+and the menu updates on the next poll.
+
 - github:
   - gqlAPI: GitHub GraphQL endpoint (`https://api.github.com/graphql`, or your GitHub Enterprise one)
   - token: NAME of the env variable that holds your github personal access token (not the token itself)
